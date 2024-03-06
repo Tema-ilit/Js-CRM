@@ -1,0 +1,693 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(236, 233, 233);
+}
+
+.container {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.inp-reset {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+}
+
+/* стилизуем шапку */
+.header {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    -webkit-box-shadow: 0px 22px 18px 1px rgba(161, 161, 161, 0.29);
+    -moz-box-shadow: 0px 22px 18px 1px rgba(161, 161, 161, 0.29);
+    box-shadow: 0px 22px 18px 1px rgba(161, 161, 161, 0.29);
+    margin-bottom: 40px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-link {
+    margin-right: 50px;
+}
+
+.header-search {
+    width: 70%;
+    border: 1px solid rgba(33, 33, 33, .2);
+    padding: 12px;
+    transition: border-color .4s;
+}
+
+.header-search:focus {
+    border-color: rgba(147, 5, 230, 1);
+}
+
+/* заголовок и таблица */
+.title {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.table-ligth {
+    --bs-table-bg: rgb(236, 233, 233);
+}
+
+.btn-danger svg>g>path,
+.btn-dark svg>g>path,
+.btn-danger,
+.btn-dark {
+    transition: background-color .4s, fill .4s;
+}
+
+.btn-danger:hover {
+    background-color: rgb(134, 3, 3);
+}
+
+.btn-danger:hover svg>g>path {
+    fill: white;
+}
+
+.btn-dark:hover svg>g>path {
+    fill: white;
+}
+
+.sort {
+    cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+
+.sort.js-active svg {
+    transform: rotate(180deg);
+}
+
+.sort:hover {
+    background-color: #cccccc;
+}
+
+.sort:active {
+    background-color: black;
+    color: white;
+}
+
+.tr-action {}
+
+.th-contacts {
+    max-width: 170px;
+}
+
+.link-contact {
+    border-bottom: 1px solid #9873FF;
+    padding-bottom: 0.3em;
+    transition: color .4s, border-color .4s;
+}
+
+.link-contact:hover {
+    color: #9873FF;
+    border-color: #5c2ae6;
+}
+
+.link-contact:active {
+    color: #5e28c4;
+    border-color: #5c2ae6;
+}
+
+.btn-contact {
+    margin-right: 10px;
+}
+
+.btn-contact svg>g>circle,
+.btn-contact svg>path {
+    transition: fill .4s;
+}
+
+.btn-contact:hover svg>g>circle,
+.btn-contact:hover svg>path {
+    fill: #9873FF;
+}
+
+.all-Btn-Contact {
+    width: 16px;
+    height: 16px;
+    padding: 2px 2px;
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    background-image: url(../img/Ellipse\ 34.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+}
+
+
+/* настроим типпи */
+
+.tippy-box[data-theme~='light'] {
+    background-color: white;
+    color: black;
+}
+
+.tippy-box[data-theme~='light'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: white;
+}
+
+.tippy-box[data-theme~='light'][data-placement^='bottom']>.tippy-arrow::before {
+    border-bottom-color: white;
+}
+
+.tippy-box[data-theme~='light'][data-placement^='left']>.tippy-arrow::before {
+    border-left-color: white;
+}
+
+.tippy-box[data-theme~='light'][data-placement^='right']>.tippy-arrow::before {
+    border-right-color: white;
+}
+
+.tippy-content {
+    padding: 8px 12px;
+}
+
+/* настроим кнопку добавления клиента */
+
+.wrap-btn-add__client {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-add__client {
+    display: flex;
+    align-items: center;
+    padding: 12.5px 25px;
+    border-radius: 5px;
+}
+
+.btn-add__client svg>path,
+.btn-add__client {
+    transition: color .4s, fill .4s;
+}
+
+.btn-add__client svg {
+    margin-right: 10px;
+}
+
+.btn-add__client:hover {
+    color: #9873FF;
+}
+
+.btn-add__client:hover svg>path {
+    fill: #9873FF;
+}
+
+.btn-add__client:focus svg>path,
+.btn-add__client:focus-visible {
+    fill: #5c2ae6;
+    outline: 1px solid #5c2ae6;
+}
+
+.btn-add__client:active svg>path {
+    fill: #5c2ae6;
+
+}
+
+
+/* добавим стилей для модального окна */
+
+.madal-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.madal-box {
+    position: relative;
+    padding: 0;
+    min-width: 500px;
+    background-color: white;
+    min-height: 100px;
+}
+
+.madal-close__btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.madal-close__btn svg>path {
+    transition: fill .4s;
+}
+
+.madal-close__btn:hover svg>path {
+    fill: rgba(0, 0, 0, .7);
+}
+
+.madal-close__btn:focus-visible svg>path {
+    fill: rgba(0, 0, 0, .7);
+}
+
+.madal-close__btn:active svg>path {
+    fill: rgba(0, 0, 0, 1);
+}
+
+/* стилизуем элементы в модальном окне */
+
+.modal-wrap {
+    padding: 20px 15px 0 15px;
+    background-color: white;
+}
+
+.modal-title {
+    margin-bottom: 20px;
+}
+
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-field {
+    position: relative;
+    width: 100%;
+}
+
+.text-field__placeholder sup {
+    color: #9873FF;
+    font-size: 14px;
+}
+
+.modal-input {
+    width: 100%;
+    border-bottom: 1px solid #C8C5D1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    transition: border-color .4s;
+}
+
+.modal-input:focus-visible {
+    border-color: #9873FF;
+}
+
+.text-field__placeholder {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 10px;
+    color: #C8C5D1;
+    pointer-events: none;
+    transform-origin: left;
+    transition: top .4s, transform .4s, color.4s;
+}
+
+.modal-input:focus-visible+.text-field__placeholder,
+.modal-input:not(:focus):valid+.text-field__placeholder {
+    top: -15px;
+    transform: scale(.85);
+    color: #9873FF;
+}
+
+.modal-input:hover+.text-field__placeholder,
+.modal-input:not(:hover):valid+.text-field__placeholder {
+    color: #9873FF;
+}
+
+.wrap-contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8C5D1;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+}
+
+.wrap-select {
+    width: 40%;
+}
+
+.add-btn-contacts {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: color .4s, outline .4s;
+}
+
+.add-btn-contacts svg {
+    margin-right: 5px;
+    transition: stroke .4s fill .4s;
+}
+
+.add-btn-contacts:hover {
+    /* background-color: #9873FF; */
+    color: #9873FF;
+}
+
+.add-btn-contacts:hover svg {
+    stroke: #9873FF;
+}
+
+/* настроим блок заполнения контактов */
+
+.wrap-fields_all {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.wrap-fields {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+}
+
+.contacts-input {
+    min-height: 49px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid black;
+    padding: 10px 5px;
+    transition: border-color .4s;
+}
+
+.text-input__placeholder {
+    position: absolute;
+    display: block;
+    left: 5px;
+    top: 13px;
+    color: #C8C5D1;
+    pointer-events: none;
+    transform-origin: left;
+    transition: top .4s, left .4s, transform .4s, color.4s;
+}
+
+.contacts-input:focus-visible {
+    border-bottom: 1px solid #3702c7;
+}
+
+.contacts-input:hover {
+    border-bottom: 1px solid #9873FF;
+}
+
+.contacts-input:focus-visible+.text-input__placeholder,
+.icontacts-input:not(:focus):valid+.text-input__placeholder {
+    top: -17px;
+    left: 0px;
+    transform: scale(.85);
+    color: #9873FF;
+}
+
+.contacts-input:hover+.text-input__placeholder,
+.icontacts-input:not(:hover):valid+.text-input__placeholder {
+    top: -17px;
+    color: #9873FF;
+}
+
+.contacts-input:valid+.text-input__placeholder,
+.icontacts-input:not(:valid):valid+.text-input__placeholder {
+    top: -17px;
+    transform: scale(.85);
+    color: #3a02d6;
+}
+
+.btn-input-del {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 10px;
+    color: black;
+    min-height: 49px;
+    transition: border .4s, color .4s, background-color .4s;
+}
+
+.btn-input-del:hover {
+    border: 1px solid #9873FF;
+    color: #9873FF;
+}
+
+.btn-input-del:focus-visible {
+    border: 1px solid #9873FF;
+    color: #9873FF;
+}
+
+.btn-input-del:active {
+    border: 1px solid black;
+    color: white;
+    background-color: #000000;
+}
+
+.error-massage__validContact {
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+/* настроим селект выбора */
+
+.choices__inner {
+    width: 100%;
+    min-height: 44px;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    padding: 7.5px 7.5px;
+    border: 1px solid #000000;
+    border-radius: 2.5px;
+    font-size: 1rem;
+    transition: background-color .4s, border-color .4s, border .4s, outline .4s;
+}
+
+.choices__inner:hover {
+    background-color: rgb(31, 31, 31);
+    border-color: #9873FF;
+}
+
+.is-focused .choices__inner {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.choices:focus {
+    outline: none;
+}
+
+.choices:focus-visible {
+    outline: 1px solid #9873FF;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.choices[data-type*=select-one]:after {
+    border-style: none;
+    border-color: none;
+    border-width: 0;
+
+    content: '';
+    height: 0;
+    width: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #5e28c4;
+    border-right: 1px solid #5e28c4;
+    position: absolute;
+    transform: rotate(135deg);
+    right: 12px;
+    top: 50%;
+    margin-top: -6px;
+    pointer-events: none;
+    transform-origin: center;
+    transition: transform .4s, border-color .4s;
+}
+
+.choices:hover[data-type*=select-one]:after {
+    border-top: 1px solid #9873FF;
+    border-right: 1px solid #9873FF;
+}
+
+.choices[data-type*=select-one].is-open:after {
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    transform: rotate(-45deg);
+    margin-top: -4px;
+}
+
+.is-selected {
+    display: none;
+}
+
+.choices__list--dropdown {
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    transition: color .4s;
+}
+
+.choices__item--selectable {
+    transition: color .4s, font-size .4s;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: rgba(53, 53, 53, 1);
+    font-size: 18px;
+    color: #9873FF;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+    padding-right: 0;
+}
+
+/* настроим кнопки сохранения и отмены */
+
+.wrap-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.btn-save {
+    padding: 12.5px 35px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    transition: background-color .4s, outline .4s, opacity .4s, color .4s;
+}
+
+.btn-save:hover {
+    color: #9873FF;
+}
+
+.btn-save:focus-visible {
+    outline: 1px solid #5c2ae6;
+}
+
+.btn-del {
+    padding: 10px 20px;
+    transition: background-color .4s, color .4s, outline .4s;
+    border-radius: 5px;
+}
+
+.btn-del:hover {
+    background-color: black;
+    color: white;
+}
+
+.btn-del:focus-visible {
+    outline: 1px solid black;
+}
+
+.btn-del:active {
+    background-color: rgb(148, 0, 0);
+}
+
+.btn-remuve {
+    background-color: transparent;
+    border: none;
+    color: #000000;
+}
+
+/* модальное окно изменения клиента */
+
+.modal-action__title {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-title__span {
+    color: #B0B0B0;
+}
+
+/* модалка на удаление клиента */
+
+.modal-wrap__delete {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-title__delete {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.modal-text__delete {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.modal-wrap__delete>.btn-danger {
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+@media screen and (width < 526px) {
+    .madal-box {
+        min-width: calc(100% - 15px);
+    }
+}
+
+@media screen and (width < 320px) {
+    .madal-box {
+        min-width: calc(100% - 15px);
+    }
+}
